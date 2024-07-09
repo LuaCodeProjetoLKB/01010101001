@@ -1,0 +1,622 @@
+--[[local StatusScript = true
+if StatusScript == true then
+  local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+wait(0.15)
+OrionLib:MakeNotification({
+    Name = "Check Script Status !",
+    Content = "Loading...",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+wait(1.5)
+OrionLib:MakeNotification({
+    Name = "Status Scripts !",
+    Content = "Working - Loading...",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+wait(0.25)
+local Window = OrionLib:MakeWindow({Name = "RNG FIGHTS", HidePremium = false, SaveConfig = true, ConfigFolder = "Projeto LKA"})
+_G.Q = false
+OrionLib:MakeNotification({
+    Name = "Script Load !",
+    Content = "LocalPlayer Load !",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+_G.Time = 5
+local Tab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://18155304028",
+    PremiumOnly = false
+})
+
+
+Tab:AddToggle({
+	Name = "Spawn Roll Loop",
+	Default = false,
+	Callback = function(Value)
+while true do
+local args = {
+    [1] = nil,
+    [2] = "Random"
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.GenerateAttack:FireServer(unpack(args))
+wait(2) end
+	end    
+})
+
+Tab:AddButton({
+    Name = "Roll",
+    Callback = function()
+            local args = {
+    [1] = nil,
+    [2] = "Random"
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.GenerateAttack:FireServer(unpack(args))
+
+    end    
+})
+
+Tab:AddButton({
+    Name = "Lucky+++",
+    Callback = function()
+            while true do
+            local args = {
+    [1] = 0.01
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.LuckIncrease:FireServer(unpack(args))
+                wait() end
+    end    
+})
+
+local Tab = Window:MakeTab({
+    Name = "Powers",
+    Icon = "rbxassetid://159833995",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "Equip All",
+    Callback = function()
+local player = game.Players.LocalPlayer
+local backpack = player.Backpack
+
+for _,item in pairs(backpack:GetChildren()) do
+    if item:IsA("Tool") then
+        item.Parent = player.Character
+    end
+      end
+      end    
+})
+
+Tab:AddButton({
+    Name = "Cyborg Equip",
+    Callback = function()
+            local player = game.Players.LocalPlayer
+            local backpack = player.Backpack
+            local character = player.Character or player.CharacterAdded:Wait()
+
+            -- Função para equipar um item Cyborg
+            local function equiparCyborg(item)
+                item.Parent = character
+            end
+
+            -- Função para desequipar um item Cyborg após 0.1 segundo
+            local function desequiparCyborg(item)
+                wait(0.1)
+                if item.Parent == character then
+                    item.Parent = backpack
+                end
+            end
+
+            -- Itera sobre os itens no inventário do jogador
+            for _, item in pairs(backpack:GetChildren()) do
+                if item.Name == "Cyborg" then
+                    equiparCyborg(item)
+                    desequiparCyborg(item)
+                end
+            end
+
+      end    
+})
+
+Tab:AddButton({
+    Name = "Laser Blue Equip",
+    Callback = function()
+            local player = game.Players.LocalPlayer
+            local backpack = player.Backpack
+            local character = player.Character or player.CharacterAdded:Wait()
+
+            -- Função para equipar um item "Orbital Strike"
+            local function equiparOrbitalStrike(item)
+                item.Parent = character
+            end
+
+            -- Função para desequipar um item "Orbital Strike" após 0.1 segundo
+            local function desequiparOrbitalStrike(item)
+                wait(0.15)
+                if item.Parent == character then
+                    item.Parent = backpack
+                end
+            end
+
+            -- Itera sobre os itens no inventário do jogador
+            for _, item in pairs(backpack:GetChildren()) do
+                if item.Name == "Orbital Strike" then
+                    equiparOrbitalStrike(item)
+                    desequiparOrbitalStrike(item)
+                end
+            end
+
+    end    
+})
+
+Tab:AddButton({
+    Name = "Laser Red Equip",
+    Callback = function()
+            local player = game.Players.LocalPlayer
+            local backpack = player.Backpack
+            local character = player.Character or player.CharacterAdded:Wait()
+
+            -- Função para equipar um item "Orbital Strike"
+            local function equiparOrbitalStrike(item)
+                item.Parent = character
+            end
+
+            -- Função para desequipar um item "Orbital Strike" após 0.1 segundo
+            local function desequiparOrbitalStrike(item)
+                wait(0.15)
+                if item.Parent == character then
+                    item.Parent = backpack
+                end
+            end
+
+            -- Itera sobre os itens no inventário do jogador
+            for _, item in pairs(backpack:GetChildren()) do
+                if item.Name == "Laser" then
+                    equiparOrbitalStrike(item)
+                    desequiparOrbitalStrike(item)
+                end
+            end
+
+    end    
+})
+
+Tab:AddButton({
+    Name = "Rage Equip",
+    Callback = function()
+            local player = game.Players.LocalPlayer
+            local backpack = player.Backpack
+            local character = player.Character or player.CharacterAdded:Wait()
+
+            -- Função para equipar um item "Orbital Strike"
+            local function equiparOrbitalStrike(item)
+                item.Parent = character
+            end
+
+            -- Função para desequipar um item "Orbital Strike" após 0.1 segundo
+            local function desequiparOrbitalStrike(item)
+                wait(0.15)
+                if item.Parent == character then
+                    item.Parent = backpack
+                end
+            end
+
+            -- Itera sobre os itens no inventário do jogador
+            for _, item in pairs(backpack:GetChildren()) do
+                if item.Name == "Rage" then
+                    equiparOrbitalStrike(item)
+                    desequiparOrbitalStrike(item)
+                end
+            end
+
+    end    
+})
+
+local Tab = Window:MakeTab({
+    Name = "Extras",
+    Icon = "rbxassetid://4813866023",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "Red Sky ✔️",
+    Callback = function()
+local args = {
+    [1] = "D E A T H",
+    [2] = true -- true
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.AttackServerEvent:FireServer(unpack(args))
+      end    
+})
+
+Tab:AddButton({
+    Name = "Red Sky ❌",
+    Callback = function()
+local args = {
+    [1] = "D E A T H",
+    [2] = false -- true
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.AttackServerEvent:FireServer(unpack(args))
+      end    
+})
+
+Tab:AddButton({
+    Name = "Rinns Hub I Script",
+    Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code"))()
+      end    
+})
+
+OrionLib:Init()
+elseif StatusScript == false then
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    OrionLib:MakeNotification({
+    Name = "Check Script Status !",
+    Content = "Loading...",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+wait(1.5)
+OrionLib:MakeNotification({
+    Name = "Status Scripts !",
+    Content = "Not Working - Fail !",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+end
+]]
+
+local StatusScript = true
+if StatusScript == true then
+  local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+wait(0.15)
+OrionLib:MakeNotification({
+    Name = "Check Script Status !",
+    Content = "Loading...",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+wait(1.5)
+OrionLib:MakeNotification({
+    Name = "Status Scripts !",
+    Content = "Working - Loading...",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+wait(0.25)
+local Window = OrionLib:MakeWindow({Name = "RNG FIGHTS", HidePremium = false, SaveConfig = true, ConfigFolder = "Projeto LKA"})
+
+OrionLib:MakeNotification({
+    Name = "Script Load !",
+    Content = "LocalPlayer Load !",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+local Tab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+
+Tab:AddButton({
+	Name = "Spawn Roll Loop",
+	Default = false,
+	Callback = function(Value)
+while true do
+local args = {
+    [1] = nil,
+    [2] = "Random"
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.GenerateAttack:FireServer(unpack(args))
+wait(2) end
+	end    
+})
+
+Tab:AddButton({
+    Name = "Roll",
+    Callback = function()
+            local args = {
+    [1] = nil,
+    [2] = "Random"
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.GenerateAttack:FireServer(unpack(args))
+
+    end    
+})
+
+Tab:AddButton({
+    Name = "Lucky+++",
+    Callback = function()
+            while true do
+            local args = {
+    [1] = 0.01
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.LuckIncrease:FireServer(unpack(args))
+                wait() end
+    end    
+})
+
+Tab:AddButton({
+    Name = "Lucky---",
+    Callback = function()
+            while true do
+            local args = {
+    [1] = -math.huge
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.LuckIncrease:FireServer(unpack(args))
+                wait() end
+    end    
+})
+
+local Tab = Window:MakeTab({
+    Name = "Powers",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "Equip All",
+    Callback = function()
+local player = game.Players.LocalPlayer
+local backpack = player.Backpack
+
+for _,item in pairs(backpack:GetChildren()) do
+    if item:IsA("Tool") then
+        item.Parent = player.Character
+    end
+      end
+      end    
+})
+
+Tab:AddButton({
+    Name = "Cyborg Equip",
+    Callback = function()
+            local player = game.Players.LocalPlayer
+            local backpack = player.Backpack
+            local character = player.Character or player.CharacterAdded:Wait()
+
+            -- Função para equipar um item Cyborg
+            local function equiparCyborg(item)
+                item.Parent = character
+            end
+
+            -- Função para desequipar um item Cyborg após 0.1 segundo
+            local function desequiparCyborg(item)
+                wait(0.1)
+                if item.Parent == character then
+                    item.Parent = backpack
+                end
+            end
+
+            -- Itera sobre os itens no inventário do jogador
+            for _, item in pairs(backpack:GetChildren()) do
+                if item.Name == "Cyborg" then
+                    equiparCyborg(item)
+                    desequiparCyborg(item)
+                end
+            end
+
+      end    
+})
+
+Tab:AddButton({
+    Name = "Laser Blue Equip",
+    Callback = function()
+            local player = game.Players.LocalPlayer
+            local backpack = player.Backpack
+            local character = player.Character or player.CharacterAdded:Wait()
+
+            -- Função para equipar um item "Orbital Strike"
+            local function equiparOrbitalStrike(item)
+                item.Parent = character
+            end
+
+            -- Função para desequipar um item "Orbital Strike" após 0.1 segundo
+            local function desequiparOrbitalStrike(item)
+                wait(0.15)
+                if item.Parent == character then
+                    item.Parent = backpack
+                end
+            end
+
+            -- Itera sobre os itens no inventário do jogador
+            for _, item in pairs(backpack:GetChildren()) do
+                if item.Name == "Orbital Strike" then
+                    equiparOrbitalStrike(item)
+                    desequiparOrbitalStrike(item)
+                end
+            end
+
+    end    
+})
+
+Tab:AddButton({
+    Name = "Laser Red Equip",
+    Callback = function()
+            local player = game.Players.LocalPlayer
+            local backpack = player.Backpack
+            local character = player.Character or player.CharacterAdded:Wait()
+
+            -- Função para equipar um item "Orbital Strike"
+            local function equiparOrbitalStrike(item)
+                item.Parent = character
+            end
+
+            -- Função para desequipar um item "Orbital Strike" após 0.1 segundo
+            local function desequiparOrbitalStrike(item)
+                wait(0.15)
+                if item.Parent == character then
+                    item.Parent = backpack
+                end
+            end
+
+            -- Itera sobre os itens no inventário do jogador
+            for _, item in pairs(backpack:GetChildren()) do
+                if item.Name == "Laser" then
+                    equiparOrbitalStrike(item)
+                    desequiparOrbitalStrike(item)
+                end
+            end
+
+    end    
+})
+
+Tab:AddButton({
+    Name = "Rage Equip",
+    Callback = function()
+            local player = game.Players.LocalPlayer
+            local backpack = player.Backpack
+            local character = player.Character or player.CharacterAdded:Wait()
+
+            -- Função para equipar um item "Orbital Strike"
+            local function equiparOrbitalStrike(item)
+                item.Parent = character
+            end
+
+            -- Função para desequipar um item "Orbital Strike" após 0.1 segundo
+            local function desequiparOrbitalStrike(item)
+                wait(0.15)
+                if item.Parent == character then
+                    item.Parent = backpack
+                end
+            end
+
+            -- Itera sobre os itens no inventário do jogador
+            for _, item in pairs(backpack:GetChildren()) do
+                if item.Name == "Rage" then
+                    equiparOrbitalStrike(item)
+                    desequiparOrbitalStrike(item)
+                end
+            end
+
+    end    
+})
+
+local Tab = Window:MakeTab({
+    Name = "Extras",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "Red Sky ✔️",
+    Callback = function()
+local args = {
+    [1] = "D E A T H",
+    [2] = true -- true
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.AttackServerEvent:FireServer(unpack(args))
+      end    
+})
+
+Tab:AddButton({
+    Name = "Red Sky ❌",
+    Callback = function()
+local args = {
+    [1] = "D E A T H",
+    [2] = false -- true
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.AttackServerEvent:FireServer(unpack(args))
+      end    
+})
+
+Tab:AddButton({
+    Name = "Red Sky Loop",
+    Callback = function()
+while true do
+local args = {
+    [1] = "D E A T H",
+    [2] = true -- true
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.AttackServerEvent:FireServer(unpack(args))
+wait(0.25)
+local args = {
+    [1] = "D E A T H",
+    [2] = false -- true
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.AttackServerEvent:FireServer(unpack(args))
+wait(0.25)
+end
+      end    
+})
+
+Tab:AddButton({
+    Name = "Rinns Hub I Script",
+    Callback = function()     loadstring(game:HttpGet("https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code"))()
+      end    
+})
+
+local Tab = Window:MakeTab({
+    Name = "Extras+",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "Delete All Tools",
+    Callback = function() 
+local args = {
+    [1] = "Punch",
+    [2] = "Randomized",
+    [3] = "Slap",
+    [4] = "Shockwave",
+    [5] = "UltraPunch",
+    [6] = "Rapid Fire"
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.RemoveAttack:FireServer(unpack(args))
+    end    
+})
+
+
+Tab:AddButton({
+    Name = "Money Negative",
+    Callback = function() 
+spawn(function()
+while true do
+local args = {
+    [1] = 8000 -- shop evento colocar valor de quanto que custa o item tipo se o (wsz) custa 100 coloca 100
+}
+
+game:GetService("ReplicatedStorage").EventsFolder.ShopEvents.ShopEvent:FireServer(unpack(args))
+task.wait()
+end
+end)
+    end    
+})
+
+
+
+OrionLib:Init()
+elseif StatusScript == false then
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    OrionLib:MakeNotification({
+    Name = "Check Script Status !",
+    Content = "Loading...",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+wait(1.5)
+OrionLib:MakeNotification({
+    Name = "Status Scripts !",
+    Content = "Not Working - Fail !",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+end
